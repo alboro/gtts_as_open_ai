@@ -1,0 +1,4 @@
+collections:
+  - name: community.docker        # for docker_compose_v2
+  - name: ansible.posix           # for synchronize (rsync)
+  - name: community.general       # for apt_mark, etc.

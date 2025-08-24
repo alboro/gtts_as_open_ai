@@ -1,0 +1,6 @@
+# gtts in open ai interface
+gtts.{{ base_domain }} {
+    encode zstd gzip
+    header Strict-Transport-Security "max-age={{ hsts_max_age }}"
+    reverse_proxy 127.0.0.1:5002
+}

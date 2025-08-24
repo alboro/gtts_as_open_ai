@@ -1,0 +1,14 @@
+- hosts: vps
+  become: true
+  tasks:
+    - name: Import common role
+      import_role:
+        name: common
+
+    - name: Import caddy role
+      import_role:
+        name: caddy
+
+    - name: Import gtts role
+      import_role:
+        name: gtts

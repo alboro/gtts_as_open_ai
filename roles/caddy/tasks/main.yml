@@ -1,0 +1,11 @@
+---
+# Caddy tasks
+- name: Update /etc/caddy/Caddyfile
+  template:
+    src: Caddyfile.j2
+    dest: /etc/caddy/Caddyfile
+    owner: root
+    group: root
+    mode: "0644"
+  notify: Reload caddy
+  tags: [caddy]

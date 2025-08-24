@@ -1,0 +1,171 @@
+### Test GTTS API Speech Generation - Russian
+POST https://gtts.yourdomain.com/v1/audio/speech
+Content-Type: application/json
+
+{
+  "model": "tts-1",
+  "input": "Привет! Это тест сервиса преобразования текста в речь. Как дела?",
+  "voice": "echo"
+}
+
+###
+
+### Test GTTS API Speech Generation - English
+POST https://gtts.yourdomain.com/v1/audio/speech
+Content-Type: application/json
+
+{
+  "model": "tts-1",
+  "input": "Hello, this is a test of the GTTS text-to-speech service. How are you today?",
+  "voice": "alloy",
+  "response_format": "mp3",
+  "speed": 1.0,
+  "language": "en"
+}
+
+###
+
+### Test GTTS API Speech Generation - Russian
+POST https://gtts.yourdomain.com/v1/audio/speech
+Content-Type: application/json
+
+{
+  "model": "tts-1",
+  "input": "Привет! Это тест сервиса преобразования текста в речь. Как дела?",
+  "voice": "alloy",
+  "response_format": "mp3",
+  "speed": 1.0
+}
+
+###
+
+### Test GTTS API Speech Generation - French
+POST https://gtts.yourdomain.com/v1/audio/speech
+Content-Type: application/json
+
+{
+  "model": "tts-1",
+  "input": "Bonjour! Ceci est un test du service de synthèse vocale. Comment allez-vous?",
+  "voice": "alloy",
+  "response_format": "mp3",
+  "speed": 0.8,
+  "language": "fr"
+}
+
+###
+
+### Test GTTS API Speech Generation - German
+POST https://gtts.yourdomain.com/v1/audio/speech
+Content-Type: application/json
+
+{
+  "model": "tts-1",
+  "input": "Hallo! Dies ist ein Test des Text-zu-Sprache-Dienstes. Wie geht es Ihnen?",
+  "voice": "nova",
+  "response_format": "mp3",
+  "speed": 1.2,
+  "language": "de"
+}
+
+###
+
+### Test GTTS API Speech Generation - Spanish
+POST https://gtts.yourdomain.com/v1/audio/speech
+Content-Type: application/json
+
+{
+  "model": "tts-1",
+  "input": "¡Hola! Esta es una prueba del servicio de síntesis de voz. ¿Cómo está usted?",
+  "voice": "shimmer",
+  "response_format": "mp3",
+  "speed": 1.0,
+  "language": "es"
+}
+
+###
+
+### Test GTTS API Speech Generation - Alternative Language Fields
+POST https://gtts.yourdomain.com/v1/audio/speech
+Content-Type: application/json
+
+{
+  "model": "tts-1",
+  "input": "Testing alternative language field with locale format",
+  "voice": "alloy",
+  "response_format": "mp3",
+  "speed": 1.0,
+  "locale": "uk_UA",
+  "target_language": "uk"
+}
+
+###
+
+### Get Supported Languages List
+GET https://gtts.yourdomain.com/v1/audio/languages
+
+###
+
+### Health Check
+GET https://gtts.yourdomain.com/health
+
+###
+
+### API Root Info
+GET https://gtts.yourdomain.com/
+
+###
+
+### Test GTTS API Speech Generation - English (with auth)
+POST https://gtts.yourdomain.com/v1/audio/speech
+Content-Type: application/json
+Authorization: Bearer n8n-secret-key
+
+{
+  "model": "tts-1",
+  "input": "Hello, this is a test of the GTTS text-to-speech service. How are you today?",
+  "voice": "alloy",
+  "response_format": "mp3",
+  "speed": 1.0,
+  "language": "en"
+}
+
+###
+
+### Test GTTS API Speech Generation - Russian (with auth)
+POST https://gtts.yourdomain.com/v1/audio/speech
+Content-Type: application/json
+Authorization: Bearer admin-key
+
+{
+  "model": "tts-1",
+  "input": "Привет! Это тест сервиса преобразования текста в речь. Как дела?",
+  "voice": "alloy",
+  "response_format": "mp3",
+  "speed": 1.0,
+  "language": "ru"
+}
+
+###
+
+### Test unauthorized request (should return 401)
+POST https://gtts.yourdomain.com/v1/audio/speech
+Content-Type: application/json
+
+{
+  "model": "tts-1",
+  "input": "This should fail with 401 Unauthorized",
+  "language": "en"
+}
+
+###
+
+### Test invalid API key (should return 401)
+POST https://gtts.yourdomain.com/v1/audio/speech
+Content-Type: application/json
+Authorization: Bearer invalid-key
+
+{
+  "model": "tts-1",
+  "input": "This should fail with invalid API key",
+  "language": "en"
+}

@@ -1,0 +1,12 @@
+---
+- name: Recreate gtts
+  community.docker.docker_compose_v2:
+    project_src: "{{ gtts_dir }}"
+    state: present
+    pull: always
+
+- name: restart gtts
+  shell: |
+    cd {{ gtts_dir }} && docker compose down && docker compose up -d
+  tags: gtts
+

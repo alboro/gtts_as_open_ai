@@ -1,0 +1,38 @@
+version: '3.7'
+
+services:
+  gtts-openai:
+    image: python:3.11-slim
+    container_name: gtts_openai_api
+    restart: unless-stopped
+    ports:
+      - "5002:5002"
+    environment:
+      - OPENAI_API_PORT=5002
+      - OPENAI_API_HOST=0.0.0.0
+      - GTTS_AUTH_KEYS=n8n-secret-key,admin-key,test-key
+    volumes:
+      - /srv/gtts/app:/app
+      - gtts_cache:/app/cache
+    working_dir: /app
+    command: >
+      sh -c "
+      apt-get update && apt-get install -y curl &&
+      pip install fastapi uvicorn gtts pydantic requests &&
+      python main.py
+      "
+    networks:
+      - shared_network
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:5002/health || exit 1"]
+      interval: 100s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  gtts_cache:
+
+networks:
+  shared_network:
+    external: true
+    name: yourvps_shared

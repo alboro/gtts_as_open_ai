@@ -1,0 +1,11 @@
+---
+# GTTS service configuration
+gtts_dir: "/srv/gtts"
+gtts_app_path: "{{ gtts_dir }}/app"
+gtts_port: "5002"
+gtts_image: "python:3.11-slim"
+gtts_container_name: "gtts_openai_api"
+
+# API Keys for authentication (comma-separated)
+# Example: "key1,key2,key3" or leave empty to disable auth
+gtts_auth_keys: "n8n-secret-key,admin-key,test-key"

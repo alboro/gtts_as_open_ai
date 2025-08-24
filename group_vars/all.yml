@@ -1,0 +1,2 @@
+base_domain: "yourdomain.com"
+main_domain: "{{ base_domain }}"

@@ -1,0 +1,11 @@
+---
+# Common system tasks
+- name: Install collections (just in case)
+  ansible.builtin.meta: flush_handlers
+
+# Backup tasks
+- name: Install rsync on server (for backup)
+  ansible.builtin.package:
+    name: rsync
+    state: present
+  tags: [backup]
