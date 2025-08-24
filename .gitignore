@@ -1,1 +1,3 @@
+.idea/*
+/roles/gtts/files/.env.dist
 /inventory.ini

@@ -10,7 +10,7 @@ services:
     environment:
       - OPENAI_API_PORT=5002
       - OPENAI_API_HOST=0.0.0.0
-      - GTTS_AUTH_KEYS=n8n-secret-key,admin-key,test-key
+      - GTTS_AUTH_KEYS=${GTTS_AUTH_KEYS}
     volumes:
       - /srv/gtts/app:/app
       - gtts_cache:/app/cache

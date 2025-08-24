@@ -10,7 +10,7 @@ services:
     environment:
       - OPENAI_API_PORT=5002
       - OPENAI_API_HOST=0.0.0.0
-      - GTTS_AUTH_KEYS={{ gtts_auth_keys | default('') }}
+      - GTTS_AUTH_KEYS=${GTTS_AUTH_KEYS}
     volumes:
       - {{ gtts_app_path | default('./app') }}:/app
       - gtts_cache:/app/cache

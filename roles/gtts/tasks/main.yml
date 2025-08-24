@@ -15,6 +15,14 @@
     - "{{ gtts_app_path }}"
   tags: gtts
 
+- name: Copy .env file for GTTS API
+  copy:
+    src: .env
+    dest: "{{ gtts_dir }}/.env"
+    mode: '0644'
+  notify: restart gtts
+  tags: gtts
+
 - name: Deploy GTTS docker-compose
   template:
     src: gtts.compose.yml.j2
