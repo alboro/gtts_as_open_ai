@@ -10,7 +10,7 @@ For quick launch of GTTS API without Ansible:
 
 2. Create `.env` file with environment variables:
    ```bash
-   GTTS_AUTH_KEYS=comma,separated,keys,here
+   GTTS_AUTH_KEYS=comma,separated,keys,here,secret-key
    ```
 
 3. Start container:
@@ -24,6 +24,7 @@ For quick launch of GTTS API without Ansible:
    ```bash
    curl -X POST http://localhost:5002/tts \
      -H "Content-Type: application/json" \
+     -H "Authorization: Bearer secret-key" \
      -d '{"text": "Hello, world!", "voice": "alloy"}' \
      --output audio.mp3
    ```
