@@ -10,7 +10,7 @@ For quick launch of GTTS API without Ansible:
 
 2. Create `.env` file with environment variables:
    ```bash
-   OPENAI_API_KEY=your_openai_api_key_here
+   GTTS_AUTH_KEYS=comma,separated,keys,here
    ```
 
 3. Start container:
