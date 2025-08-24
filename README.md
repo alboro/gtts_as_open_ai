@@ -1,3 +1,9 @@
+# The Idea
+The idea isn’t new: gTTS + Docker + OpenAI.
+Why? To listen to books for free, not with Apple’s voice, but with Google’s.
+In the future — text preprocessing to filter out annoying symbols, e.g. certain types of quotation marks. But for now, nothing is filtered.
+I set it up on a cheap VPS, pointed a custom OpenAI URL in my reading app, and now I’m listening — gTTS is fast.
+
 # Simple usage
 
 For quick launch of GTTS API without Ansible:
